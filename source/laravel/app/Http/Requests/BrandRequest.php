@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class ColorRequest extends FormRequest
+class BrandRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,7 +30,7 @@ class ColorRequest extends FormRequest
                 'required',
                 'min:3',
                 'max:255',
-                Rule::unique('color_cars')->ignore($id), //valida o campo name como unico, mas exceto quando for do ID informado
+                Rule::unique('brand_cars')->ignore($id), //valida o campo name como unico, mas exceto quando for do ID informado
             ],
         ];
 
