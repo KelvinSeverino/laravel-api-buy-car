@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\{
     BrandController,
+    CarController,
     ModelCarController,
     ColorController,
 };
@@ -11,6 +12,8 @@ use App\Http\Controllers\Api\{
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiResource('/veiculos', CarController::class);
 
 Route::delete('/marcas/{id}', [BrandController::class, 'destroy']);
 Route::put('/marcas/{id}', [BrandController::class, 'update']);
