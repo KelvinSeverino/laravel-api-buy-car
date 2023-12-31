@@ -38,10 +38,10 @@ class CarRequest extends FormRequest
                 'required',
                 'exists:color_cars,id'
             ],
-            'doors' => 'required|integer',
-            'year' => 'required|integer',
-            'km' => 'required|numeric',
-            'price' => 'required|numeric',
+            'doors' => 'required|integer|gt:0',
+            'year' => 'required|integer|gt:1900',
+            'km' => 'required|numeric|gt:0',
+            'price' => 'required|numeric|gt:0',
         ];
 
         return $rules;
