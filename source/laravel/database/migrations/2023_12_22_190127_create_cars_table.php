@@ -18,8 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('color_id');
             $table->integer('doors');
             $table->integer('year');
-            $table->float('km');
-            $table->float('price');
+            $table->decimal('km', 10, 2);
+            $table->decimal('price', 10, 2);
             $table->timestamps();
         });
     }

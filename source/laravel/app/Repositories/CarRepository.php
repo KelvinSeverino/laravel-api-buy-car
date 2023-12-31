@@ -37,7 +37,7 @@ class CarRepository
                         ->join('model_cars AS m', 'm.id', '=', 'cars.model_id')
                         ->join('color_cars AS c', 'c.id', '=', 'cars.color_id')
                         ->select(
-                            'cars.id','b.name AS brand','m.name AS model','c.name AS color',
+                            'cars.id','cars.brand_id','b.name AS brand','cars.model_id','m.name AS model','cars.color_id','c.name AS color',
                             'cars.doors','cars.year','cars.km','cars.price','cars.created_at')
                         ->where('cars.id', $id)
                         ->first();
